@@ -4,20 +4,19 @@ All commands valid for Linux/Ubuntu operation system.
 
 Pre install
 -----------
-1. Install (Vagrant 1.8.7)[https://releases.hashicorp.com/vagrant/1.8.7/]
-2. Install (VirtualBox 5.0.28)[https://www.virtualbox.org/wiki/Download_Old_Builds_5_0]
+1. Install [Vagrant 1.8.7](https://releases.hashicorp.com/vagrant/1.8.7/)
+2. Install [VirtualBox 5.0.28](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0)
 3. Install vboxsf plugin `vagrant plugin install vagrant-vbguest`
 
 Homestead box
 -------------
-In order to have PHP 5.6 please use (homestead 0.3.3)[https://atlas.hashicorp.com/laravel/boxes/homestead/versions/0.3.3]
+In order to have PHP 5.6 please use [Homestead 0.3.3](https://atlas.hashicorp.com/laravel/boxes/homestead/versions/0.3.3)
 
 To add homestead to your vagrant run: `vagrant box add laravel/homestead --box-version 0.3.3`
 
 Homestead
 ---------
-Use v2.2.2 as latest version of 2 branches to support php 5.6 
-https://github.com/laravel/homestead/tree/v2.2.2
+Use [v2.2.2](https://github.com/laravel/homestead/tree/v2.2.2) as latest version of 2 branches to support php 5.6.
 
 1. Add to composer
 ```json
