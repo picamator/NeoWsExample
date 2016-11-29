@@ -1,5 +1,4 @@
 <?php
-
 namespace Neo\NasaBundle\Controller;
 
 use Neo\NasaBundle\Model\Response\DefaultResponse;
@@ -7,9 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @todo find way to add headers for all responses
- */
 class DefaultController extends Controller
 {
     /**
@@ -24,10 +20,7 @@ class DefaultController extends Controller
         $serializer = $this->get('jms_serializer');
         $data = $serializer->serialize($defaultResponse,'json');
 
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        return new Response($data);
     }
 
     /**
@@ -42,10 +35,7 @@ class DefaultController extends Controller
         $serializer = $this->get('jms_serializer');
         $data = $serializer->serialize($collection,'json');
 
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        return new Response($data);
     }
 
     /**
@@ -60,9 +50,6 @@ class DefaultController extends Controller
         $serializer = $this->get('jms_serializer');
         $data = $serializer->serialize($collection,'json');
 
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        return new Response($data);
     }
 }

@@ -1,7 +1,7 @@
 {
     "name": "picamator/neo-ws-example",
     "description": "Example using NeoWsClient (Client for NASA's Near Earth Object Web Service)",
-    "keywords": ["NeoWs", "example"],
+    "keywords": ["NeoWsClient", "example", "neows"],
     "license": "MIT",
     "type": "project",
     "autoload": {
@@ -44,6 +44,12 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
         ]
     },
     "config": {
