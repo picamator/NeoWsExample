@@ -3,7 +3,6 @@ namespace Neo\NasaBundle\Document;
 
 use Neo\NasaBundle\Model\Api\Document\NeoInterface;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\Type;
 

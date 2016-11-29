@@ -1,7 +1,6 @@
 <?php
 namespace Neo\NasaBundle\Model\Api\Repository;
 
-use Neo\NasaBundle\Model\Api\Document\SyncLogInterface;
 use Picamator\NeoWsClient\Model\Api\Data\NeoInterface;
 
 /**

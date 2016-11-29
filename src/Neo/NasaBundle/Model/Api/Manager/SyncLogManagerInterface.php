@@ -1,7 +1,6 @@
 <?php
 namespace Neo\NasaBundle\Model\Api\Manager;
 
-use Neo\NasaBundle\Model\Api\Document\NeoInterface;
 use Neo\NasaBundle\Model\Api\Document\SyncLogInterface;
 
 /**

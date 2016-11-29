@@ -1,7 +1,6 @@
 <?php
 namespace Neo\NasaBundle\EventListener;
 
-use Neo\NasaBundle\Controller\JsonAwareControllerInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 /**
