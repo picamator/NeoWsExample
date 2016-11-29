@@ -67,8 +67,9 @@ mv composer.phar /usr/local/bin/composer
 5. Execute `sudo su`
 6. Make mongodb module available `echo "extension=mongo.so" >> /etc/php5/cli/php.ini` and `echo "extension=mongo.so" >> /etc/php5/fpm/php.ini`
 7. Exit from root run `exit`
-8. Restart web server `sudo service nginx restart`
-9. Install MongoDB server `sudo apt-get install mongodb`
+8. Restart FastCGI `sudo service php5-fpm restart`
+9. Restart web server `sudo service nginx restart`
+10. Install MongoDB server `sudo apt-get install mongodb`
 
 To have get access to MongoDB server from your host machine use ssh connection:
 

@@ -4,12 +4,15 @@ namespace Neo\NasaBundle\Document;
 use Neo\NasaBundle\Model\Api\Document\NeoInterface;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Symfony\Component\Validator\Constraints as Assert;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Neo document
  *
  * @MongoDB\Document
  * @MongoDB\UniqueIndex(keys={"reference"="asc", "date"="asc"})
+ * @MongoDB\Document(repositoryClass="Neo\NasaBundle\Repository\NeoRepository")
  *
  * @codeCoverageIgnore
  */
@@ -17,6 +20,7 @@ class Neo implements NeoInterface
 {
     /**
      * @MongoDB\Id
+     * @Exclude
      *
      * @return string
      */
@@ -24,6 +28,7 @@ class Neo implements NeoInterface
 
     /**
      * @MongoDB\Field(type="date")
+     * @Type("DateTime<'Y-m-d'>")
      *
      * @var \DateTime
      */
@@ -31,6 +36,7 @@ class Neo implements NeoInterface
 
     /**
      * @MongoDB\Field(type="string")
+     * @Type("string")
      *
      * @var string
      */
@@ -38,6 +44,7 @@ class Neo implements NeoInterface
 
     /**
      * @MongoDB\Field(type="string")
+     * @Type("string")
      *
      * @var string
      */
@@ -45,6 +52,7 @@ class Neo implements NeoInterface
 
     /**
      * @MongoDB\Field(type="string")
+     * @Type("string")
      *
      * @var string
      */
@@ -52,6 +60,7 @@ class Neo implements NeoInterface
 
     /**
      * @MongoDB\Field(type="boolean")
+     * @Type("boolean")
      *
      * @var bool
      */

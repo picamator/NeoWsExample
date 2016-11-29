@@ -55,6 +55,12 @@ Command `php app/console feed:sync`:
 2. Saves data to database
 3. Prevents from duplication run
 
+### Actions
+Several actions available with routs:
+
+1. `/neo/hazardous` - get list of all Hazardous asteroids
+2. `/neo/fastest` - get the fastest asteroid
+
 Contribution
 ------------
 If you find this project worth to use please add a star. Follow changes to see all activities.
