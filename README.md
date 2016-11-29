@@ -1,20 +1,22 @@
 NeoWsExample
 ============
 
-NeoWsExample is an example application to show how to use [NeoWsClient](https://github.com/picamator/NeoWsClient) (client for NASA Open Api "[Near Earth Object Web Service](https://api.nasa.gov/neo/?api_key=DEMO_KEY)")
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c77b115b-b9f7-47f3-bb76-0c950b1a23e3/mini.png)](https://insight.sensiolabs.com/projects/c77b115b-b9f7-47f3-bb76-0c950b1a23e3)
+
+NeoWsExample is an example application for [NeoWsClient](https://github.com/picamator/NeoWsClient) (client for NASA Open Api "[Near Earth Object Web Service](https://api.nasa.gov/neo/?api_key=DEMO_KEY)")
 with [Symfony 2.8](http://symfony.com/blog/symfony-2-8-0-released).
 
 Requirements
 ------------
 * [PHP 5.6](http://php.net/manual/en/migration56.new-features.php)
-* [MongoDB](https://www.mongodb.com/)
-* [Mongo](https://pecl.php.net/package/mongo)
+* [MongoDB Server](https://www.mongodb.com/)
+* [Mongo Pecl](https://pecl.php.net/package/mongo)
 
 Installation
 ------------
 NeoWsExample has virtualization development environment based on [Laravel's Vagrant Homestead](https://laravel.com/docs/5.3/homestead). 
 
-Please follow steps in [instructions](doc/INSTALLATION.md) to configure your dev environment.
+Please follow steps in [instructions](doc/INSTALLATION.md) to configure your dev. environment.
 
 Database
 --------
@@ -30,7 +32,7 @@ Neo document saves Neo objects with mapping displayed in table bellow.
 
  NeoWs Raw Response                                             | Neo Document  | Description
  ---                                                            | ---           | ---
- near_earth_object[index]                                       | data          | Save the `index` as date
+ near_earth_object[index]                                       | data          | Index of `near_earth_object`
  neo_reference_id                                               | reference     | Reference identifier
  name                                                           | name          | Asteroid name     
  close_approach_data[*].relative_velocity.kilometers_per_hour   | speed         | Average speed km/h over all `close_approach_data`. Zero means that there no `close_approach_data` data present.
