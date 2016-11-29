@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f321f24bd327b3c5311a221a67a0582",
+    "content-hash": "c9776d627be92f0725a76cd04deb1e57",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1842,16 +1842,16 @@
         },
         {
             "name": "picamator/neo-ws-client",
-            "version": "dev-dev",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/picamator/NeoWsClient.git",
-                "reference": "fa0806c743efcab2f798402dec06b26d59c9fa1f"
+                "reference": "9e5ee7923aeb4c84c9361337468f5d92dc8a20c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/picamator/NeoWsClient/zipball/fa0806c743efcab2f798402dec06b26d59c9fa1f",
-                "reference": "fa0806c743efcab2f798402dec06b26d59c9fa1f",
+                "url": "https://api.github.com/repos/picamator/NeoWsClient/zipball/9e5ee7923aeb4c84c9361337468f5d92dc8a20c7",
+                "reference": "9e5ee7923aeb4c84c9361337468f5d92dc8a20c7",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 "earth",
                 "hazardous"
             ],
-            "time": "2016-11-27 11:36:12"
+            "time": "2016-11-29T17:33:28+00:00"
         },
         {
             "name": "psr/http-message",
@@ -3294,9 +3294,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "picamator/neo-ws-client": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

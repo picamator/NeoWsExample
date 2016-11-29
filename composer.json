@@ -29,7 +29,7 @@
         "ocramius/proxy-manager": "~1.0",
         "symfony/proxy-manager-bridge": "2.8.*",
         "jms/serializer-bundle": "^1.1",
-        "picamator/neo-ws-client": "dev-dev"
+        "picamator/neo-ws-client": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -44,12 +44,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
-        ],
-        "post-install-cmd": [
-            "@symfony-scripts"
-        ],
-        "post-update-cmd": [
-            "@symfony-scripts"
         ]
     },
     "config": {
