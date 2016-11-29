@@ -1,0 +1,4 @@
+neo_nasa:
+    resource: "@NeoNasaBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,73 @@
+imports:
+  - { resource: "neo.ws.client.services.yml" }
+
+services:
+#    neo_nasa.example:
+#        class: Neo\NasaBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+  # Event
+  # ========
+  neo_nasa.json_listener:
+    class: 'Neo\NasaBundle\EventListener\JsonListener'
+    tags:
+      - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+
+  # Doctrine
+  # ========
+  neo_nasa.doctrine_array_collection:
+    class: 'Doctrine\Common\Collections\ArrayCollection'
+    shared: false
+    lazy:  true
+
+  # Model
+  # =====
+  neo_nasa.model_object_manager:
+    class: 'Neo\NasaBundle\Model\ObjectManager'
+
+  neo_nasa.model_response_default:
+    class: 'Neo\NasaBundle\Model\Response\DefaultResponse'
+
+  # Model\Builder
+  # -------------
+  neo_nasa.model_builder_neo_factory:
+    class: 'Neo\NasaBundle\Model\Builder\NeoFactory'
+    arguments: ["@neo_nasa.model_object_manager"]
+    lazy:  true
+
+  neo_nasa.model_builder_sync_log_factory:
+    class: 'Neo\NasaBundle\Model\Builder\SyncLogFactory'
+    arguments: ["@neo_nasa.model_object_manager", "@=service('doctrine.odm.mongodb.document_manager').getRepository('NeoNasaBundle:SyncLog')"]
+
+  # Model\Nasa
+  # -------------
+  neo_nasa.model_nasa_crawler:
+    class: 'Neo\NasaBundle\Model\Nasa\Crawler'
+    arguments: ["@neo_ws_manager_feed_manager", "@neo_ws_request_builder_feed_request_factory", "@neo_nasa.model_builder_neo_factory", "@neo_nasa.doctrine_array_collection"]
+    lazy:  true
+
+  # Model\Manager
+  # -------------
+  neo_nasa.model_manager_neo:
+    class: 'Neo\NasaBundle\Model\Manager\NeoManager'
+    arguments: ["@=service('doctrine.odm.mongodb.document_manager')"]
+    lazy:  true
+
+  neo_nasa.model_manager_sync_log:
+    class: 'Neo\NasaBundle\Model\Manager\SyncLogManager'
+    arguments: ["@=service('doctrine.odm.mongodb.document_manager')"]
+    lazy:  true
+
+  # Service
+  # =======
+  neo_nasa.service_sync:
+    class: 'Neo\NasaBundle\Service\SyncService'
+    arguments: ["@=service('doctrine.odm.mongodb.document_manager')", "@neo_nasa.model_nasa_crawler", "@neo_nasa.model_manager_neo", "@neo_nasa.model_manager_sync_log"]
+
+  neo_nasa.service_hazardous:
+    class: 'Neo\NasaBundle\Service\HazardousService'
+    arguments: ["@=service('doctrine.odm.mongodb.document_manager').getRepository('NeoNasaBundle:Neo')", "@neo_nasa.doctrine_array_collection"]
+
+  neo_nasa.service_fastest:
+    class: 'Neo\NasaBundle\Service\FastestService'
+    arguments: ["@=service('doctrine.odm.mongodb.document_manager').getRepository('NeoNasaBundle:Neo')"]
