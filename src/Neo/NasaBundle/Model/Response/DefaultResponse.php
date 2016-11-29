@@ -5,6 +5,8 @@ use Neo\NasaBundle\Model\Api\Response\DefaultResponseInterface;
 
 /**
  * Default value object
+ *
+ * @codeCoverageIgnore
  */
 class DefaultResponse implements DefaultResponseInterface
 {

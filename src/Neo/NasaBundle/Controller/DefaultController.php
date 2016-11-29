@@ -15,7 +15,7 @@ class DefaultController extends Controller
     public function helloAction()
     {
         /** @var DefaultResponse $defaultResponse */
-        $defaultResponse = $this->container->get('new_nasa.reponse_default');
+        $defaultResponse = $this->container->get('neo_nasa.model_response_default');
         $defaultResponse->setHello('world!');
 
         $serializer = $this->get('jms_serializer');
